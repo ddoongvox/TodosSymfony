@@ -20,7 +20,7 @@ class TaskController extends Controller {
         $taskList = $this->getDoctrine()
             ->getRepository(Task::class)
             ->findAll();
-        //var_dump($taskList);die();
+
         return $this->render("task/index.html.twig", [
             'taskList' => $taskList
         ]);
