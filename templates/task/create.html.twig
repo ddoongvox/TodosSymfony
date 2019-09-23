@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <div style="height: 570px; margin: 30px 30px 0 30px;">
+        <h2 class="page-header">Create Task</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    <div>
+        <a class="btn btn-default" style="background-color: #DDDDDD; margin-left: 30px;" href="/task">Back to Homepage</a>
+    </div>
 {% endblock %}

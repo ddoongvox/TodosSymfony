@@ -66,7 +66,7 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
 
         // line 4
         echo "
-    <div style=\"height: 570px; margin: 30px 30px 0 30px;\">
+    <div style=\"min-height: 570px; margin: 30px 30px 0 30px;\">
         <h2 class=\"page-header\" style=\"margin-left: 10px;\">";
         // line 6
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 6, $this->source); })()), "name", [], "any", false, false, false, 6), "html", null, true);
@@ -115,7 +115,7 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
 
 {% block body %}
 
-    <div style=\"height: 570px; margin: 30px 30px 0 30px;\">
+    <div style=\"min-height: 570px; margin: 30px 30px 0 30px;\">
         <h2 class=\"page-header\" style=\"margin-left: 10px;\">{{ task.name }}</h2>
         <ul class=\"list-group\">
             <li class=\"list-group-item\">Priority: {{ task.priority }}</li>
