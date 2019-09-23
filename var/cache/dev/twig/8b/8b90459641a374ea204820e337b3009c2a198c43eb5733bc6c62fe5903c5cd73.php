@@ -69,8 +69,8 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
         <a class=\"btn btn-primary\" style=\"float: right;\" href=\"/task/create\">Create Task</a>
     </div>
     <div class=\"bs-example\" style=\"margin: 0 30px 0 30px;\" data-example-id=\"simple-table\">
-        <table class=\"table\">
-            <thead>
+        <table class=\"table table-hover\">
+            <thead class=\"thead-light\">
             <tr>
                 <th>#</th>
                 <th>Task</th>
@@ -159,8 +159,8 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
         <a class=\"btn btn-primary\" style=\"float: right;\" href=\"/task/create\">Create Task</a>
     </div>
     <div class=\"bs-example\" style=\"margin: 0 30px 0 30px;\" data-example-id=\"simple-table\">
-        <table class=\"table\">
-            <thead>
+        <table class=\"table table-hover\">
+            <thead class=\"thead-light\">
             <tr>
                 <th>#</th>
                 <th>Task</th>
