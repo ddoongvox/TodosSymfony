@@ -65,21 +65,24 @@ class __TwigTemplate_085cf145c658bb3bdae865e8f1c22400ef0e7e355ab450fd14fe806902b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <a class=\"btn btn-default\" style=\"background-color: #DDDDDD;\" href=\"/task\">Back to Homepage</a>
-    <hr>
-    <h2 class=\"page-header\">Update Task</h2>
-    ";
+        echo "    <div style=\"height: 570px; margin: 30px 30px 0 30px;\">
+        <h2 class=\"page-header\">Update Task</h2>
+        ";
+        // line 6
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), 'form_start');
+        echo "
+        ";
         // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form_start');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'widget');
         echo "
-    ";
+        ";
         // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'widget');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'form_end');
         echo "
-    ";
-        // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_end');
-        echo "
+    </div>
+    <div>
+        <a class=\"btn btn-default\" style=\"background-color: #DDDDDD; margin-left: 30px;\" href=\"/task\">Back to Homepage</a>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -101,7 +104,7 @@ class __TwigTemplate_085cf145c658bb3bdae865e8f1c22400ef0e7e355ab450fd14fe806902b
 
     public function getDebugInfo()
     {
-        return array (  81 => 9,  77 => 8,  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  80 => 8,  76 => 7,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -109,12 +112,15 @@ class __TwigTemplate_085cf145c658bb3bdae865e8f1c22400ef0e7e355ab450fd14fe806902b
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <a class=\"btn btn-default\" style=\"background-color: #DDDDDD;\" href=\"/task\">Back to Homepage</a>
-    <hr>
-    <h2 class=\"page-header\">Update Task</h2>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <div style=\"height: 570px; margin: 30px 30px 0 30px;\">
+        <h2 class=\"page-header\">Update Task</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    <div>
+        <a class=\"btn btn-default\" style=\"background-color: #DDDDDD; margin-left: 30px;\" href=\"/task\">Back to Homepage</a>
+    </div>
 {% endblock %}", "task/update.html.twig", "/home/user/todolist/templates/task/update.html.twig");
     }
 }

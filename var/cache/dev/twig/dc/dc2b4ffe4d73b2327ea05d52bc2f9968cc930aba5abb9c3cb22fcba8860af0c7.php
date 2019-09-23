@@ -65,22 +65,26 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <a class=\"btn btn-default\" style=\"background-color: #DDDDDD;\" href=\"/task\">Back to Homepage</a>
-    <hr>
-    <h2 class=\"page-header\">";
+        echo "
+    <div style=\"height: 570px; margin: 30px 30px 0 30px;\">
+        <h2 class=\"page-header\" style=\"margin-left: 10px;\">";
         // line 6
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 6, $this->source); })()), "name", [], "any", false, false, false, 6), "html", null, true);
         echo "</h2>
-    <ul class=\"list-group\">
-        <li class=\"list-group-item\">Priority: ";
+        <ul class=\"list-group\">
+            <li class=\"list-group-item\">Priority: ";
         // line 8
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 8, $this->source); })()), "priority", [], "any", false, false, false, 8), "html", null, true);
         echo "</li>
-        <li class=\"list-group-item\">Due date: ";
+            <li class=\"list-group-item\">Due date: ";
         // line 9
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 9, $this->source); })()), "dueDate", [], "any", false, false, false, 9), "F j, Y ,g:i a"), "html", null, true);
         echo "</li>
-    </ul>
+        </ul>
+    </div>
+    <div>
+        <a class=\"btn btn-default\" style=\"background-color: #DDDDDD; margin-left: 30px;\" href=\"/task\">Back to Homepage</a>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -110,13 +114,17 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <a class=\"btn btn-default\" style=\"background-color: #DDDDDD;\" href=\"/task\">Back to Homepage</a>
-    <hr>
-    <h2 class=\"page-header\">{{ task.name }}</h2>
-    <ul class=\"list-group\">
-        <li class=\"list-group-item\">Priority: {{ task.priority }}</li>
-        <li class=\"list-group-item\">Due date: {{ task.dueDate|date('F j, Y ,g:i a') }}</li>
-    </ul>
+
+    <div style=\"height: 570px; margin: 30px 30px 0 30px;\">
+        <h2 class=\"page-header\" style=\"margin-left: 10px;\">{{ task.name }}</h2>
+        <ul class=\"list-group\">
+            <li class=\"list-group-item\">Priority: {{ task.priority }}</li>
+            <li class=\"list-group-item\">Due date: {{ task.dueDate|date('F j, Y ,g:i a') }}</li>
+        </ul>
+    </div>
+    <div>
+        <a class=\"btn btn-default\" style=\"background-color: #DDDDDD; margin-left: 30px;\" href=\"/task\">Back to Homepage</a>
+    </div>
 {% endblock %}", "task/details.html.twig", "/home/user/todolist/templates/task/details.html.twig");
     }
 }

@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <a class="btn btn-default" style="background-color: #DDDDDD;" href="/task">Back to Homepage</a>
-    <hr>
-    <h2 class="page-header">{{ task.name }}</h2>
-    <ul class="list-group">
-        <li class="list-group-item">Priority: {{ task.priority }}</li>
-        <li class="list-group-item">Due date: {{ task.dueDate|date('F j, Y ,g:i a') }}</li>
-    </ul>
+
+    <div style="height: 570px; margin: 30px 30px 0 30px;">
+        <h2 class="page-header" style="margin-left: 10px;">{{ task.name }}</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Priority: {{ task.priority }}</li>
+            <li class="list-group-item">Due date: {{ task.dueDate|date('F j, Y ,g:i a') }}</li>
+        </ul>
+    </div>
+    <div>
+        <a class="btn btn-default" style="background-color: #DDDDDD; margin-left: 30px;" href="/task">Back to Homepage</a>
+    </div>
 {% endblock %}

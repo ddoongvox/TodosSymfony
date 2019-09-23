@@ -65,10 +65,10 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <div style=\"height: 80px; margin-top: 15px;\">
+        echo "    <div style=\"height: 80px; margin: 30px 30px 0 0;\">
         <a class=\"btn btn-primary\" style=\"float: right;\" href=\"/task/create\">Create Task</a>
     </div>
-    <div class=\"bs-example\" data-example-id=\"simple-table\">
+    <div class=\"bs-example\" style=\"margin: 0 30px 0 30px;\" data-example-id=\"simple-table\">
         <table class=\"table\">
             <thead>
             <tr>
@@ -107,15 +107,15 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
                     <a href=\"/task/details/";
             // line 26
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 26), "html", null, true);
-            echo "\" class=\"btn btn-success\">View</a>
+            echo "\" class=\"btn btn-success\" style=\"width: 87px;\">View</a>
                     <a href=\"/task/update/";
             // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 27), "html", null, true);
-            echo "\" class=\"btn btn-primary\">Update</a>
+            echo "\" class=\"btn btn-primary\" style=\"width: 87px;\">Update</a>
                     <a href=\"/task/delete/";
             // line 28
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 28), "html", null, true);
-            echo "\" class=\"btn btn-danger\">Delete</a>
+            echo "\" class=\"btn btn-danger\" style=\"width: 87px;\">Delete</a>
                 </td>
             </tr>
             ";
@@ -155,10 +155,10 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <div style=\"height: 80px; margin-top: 15px;\">
+    <div style=\"height: 80px; margin: 30px 30px 0 0;\">
         <a class=\"btn btn-primary\" style=\"float: right;\" href=\"/task/create\">Create Task</a>
     </div>
-    <div class=\"bs-example\" data-example-id=\"simple-table\">
+    <div class=\"bs-example\" style=\"margin: 0 30px 0 30px;\" data-example-id=\"simple-table\">
         <table class=\"table\">
             <thead>
             <tr>
@@ -177,9 +177,9 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
                 <td>{{ task.priority }}</td>
                 <td>{{ task.dueDate|date('F j, Y ,g:i a') }}</td>
                 <td>
-                    <a href=\"/task/details/{{ task.id }}\" class=\"btn btn-success\">View</a>
-                    <a href=\"/task/update/{{ task.id }}\" class=\"btn btn-primary\">Update</a>
-                    <a href=\"/task/delete/{{ task.id }}\" class=\"btn btn-danger\">Delete</a>
+                    <a href=\"/task/details/{{ task.id }}\" class=\"btn btn-success\" style=\"width: 87px;\">View</a>
+                    <a href=\"/task/update/{{ task.id }}\" class=\"btn btn-primary\" style=\"width: 87px;\">Update</a>
+                    <a href=\"/task/delete/{{ task.id }}\" class=\"btn btn-danger\" style=\"width: 87px;\">Delete</a>
                 </td>
             </tr>
             {% endfor %}
