@@ -88,21 +88,102 @@ class TaskController extends Controller {
     /**
      * @Route("/task/update/{id}", name="update_task")
      */
-    public function updateTask(Request $request) {
-        return $this->render("task/update.html.twig");
+    public function updateTask($id, Request $request) {
+        $task = $this->getDoctrine()
+            ->getRepository(Task::class)
+            ->find($id);
+
+        $task->setName($task->getName());
+        $task->setPriority($task->getPriority());
+        $task->setDueDate($task->getDueDate());
+        //$task->setCreateDate($now);
+
+
+        $form = $this->createFormBuilder($task)
+            ->add('name', TextType::class, ['attr' => [
+                'class' => 'form-control',
+                'style' => 'margin-bottom: 15px'
+            ]])
+            ->add('priority', ChoiceType::class, [
+                'choices' => [
+                    'Low' => 'Low',
+                    'Normal' => 'Normal',
+                    'High' => 'High'
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                    'style' => 'margin-bottom: 15px'
+                ]])
+            ->add('due_date', DateTimeType::class, [ 'attr' => [
+//                'class' => 'form-control',
+                'style' => 'margin-bottom: 15px; display: flex;'
+            ]])
+            ->add('save', SubmitType::class, [
+                'label' => 'Update Task', 'attr' => [
+                    'class' => 'btn btn-primary',
+                    'style' => 'margin-bottom: 15px'
+                ]])
+            ->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Get data from form
+            $name = $form['name']->getData();
+            $priority = $form['priority']->getData();
+            $due_date = $form['due_date']->getData();
+            $now = new\DateTime('now');
+
+            $em = $this->getDoctrine()->getManager();
+            $task = $em
+                ->getRepository(Task::class)
+                ->find($id);
+
+            $task->setName($name);
+            $task->setPriority($priority);
+            $task->setDueDate($due_date);
+            $task->setCreateDate($now);
+
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Task Update'
+            );
+            return $this->redirectToRoute('task_list');
+        }
+        return $this->render("task/update.html.twig", [
+            'task' => $task,
+            'form' => $form->createView()
+        ]);
     }
 
     /**
      * @Route("/task/delete/{id}", name="delete_task")
      */
-    public function deleteTask(Request $request) {
-        return $this->render("task/delete.html.twig");
+    public function deleteTask($id) {
+        $em = $this->getDoctrine()->getManager();
+        $task = $em
+            ->getRepository(Task::class)
+            ->find($id);
+
+        $em->remove($task);
+        $em->flush();
+        $this->addFlash(
+            'notice',
+            'Task Delete'
+        );
+        return $this->redirectToRoute('task_list');
     }
 
     /**
      * @Route("/task/details/{id}", name="details_task")
      */
-    public function detailsTask(Request $request) {
-        return $this->render("task/details.html.twig");
+    public function detailsTask($id) {
+        $task = $this->getDoctrine()
+            ->getRepository(Task::class)
+            ->find($id);
+        return $this->render("task/details.html.twig", [
+            'task' => $task
+        ]);
     }
 }

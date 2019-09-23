@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div style="height: 80px; margin-top: 15px;">
+        <a class="btn btn-primary" style="float: right;" href="/task/create">Create Task</a>
+    </div>
     <div class="bs-example" data-example-id="simple-table">
         <table class="table">
             <thead>
             <tr>
                 <th>#</th>
                 <th>Task</th>
+                <th>Priority</th>
                 <th>Due date</th>
                 <th>Action</th>
             </tr>
@@ -16,6 +20,7 @@
             <tr>
                 <th scope="row">{{ task.id }}</th>
                 <td>{{ task.name }}</td>
+                <td>{{ task.priority }}</td>
                 <td>{{ task.dueDate|date('F j, Y ,g:i a') }}</td>
                 <td>
                     <a href="/task/details/{{ task.id }}" class="btn btn-success">View</a>
