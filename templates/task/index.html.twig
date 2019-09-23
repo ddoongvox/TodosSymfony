@@ -10,7 +10,7 @@
             <tr>
                 <th>#</th>
                 <th>Task</th>
-                <th>Priority</th>
+{#                <th>Priority</th>#}
                 <th>Due date</th>
                 <th>Action</th>
             </tr>
@@ -19,8 +19,8 @@
             {% for task in taskList %}
             <tr>
                 <th scope="row">{{ task.id }}</th>
-                <td>{{ task.name }}</td>
-                <td>{{ task.priority }}</td>
+                <td style="width: 380px;">{{ task.name }}</td>
+{#                <td>{{ task.priority }}</td>#}
                 <td>{{ task.dueDate|date('F j, Y ,g:i a') }}</td>
                 <td>
                     <a href="/task/details/{{ task.id }}" class="btn btn-success" style="width: 87px;">View</a>

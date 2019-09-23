@@ -74,8 +74,9 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
             <tr>
                 <th>#</th>
                 <th>Task</th>
-                <th>Priority</th>
-                <th>Due date</th>
+";
+        // line 14
+        echo "                <th>Due date</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -91,16 +92,13 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</th>
-                <td>";
+                <td style=\"width: 380px;\">";
             // line 22
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "name", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "priority", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-                <td>";
+";
             // line 24
+            echo "                <td>";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["task"], "dueDate", [], "any", false, false, false, 24), "F j, Y ,g:i a"), "html", null, true);
             echo "</td>
                 <td>
@@ -147,7 +145,7 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
 
     public function getDebugInfo()
     {
-        return array (  127 => 32,  117 => 28,  113 => 27,  109 => 26,  104 => 24,  100 => 23,  96 => 22,  92 => 21,  89 => 20,  85 => 19,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  125 => 32,  115 => 28,  111 => 27,  107 => 26,  101 => 24,  97 => 22,  93 => 21,  90 => 20,  86 => 19,  79 => 14,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -164,7 +162,7 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
             <tr>
                 <th>#</th>
                 <th>Task</th>
-                <th>Priority</th>
+{#                <th>Priority</th>#}
                 <th>Due date</th>
                 <th>Action</th>
             </tr>
@@ -173,8 +171,8 @@ class __TwigTemplate_5a54a03747df0bda33062e49da89c72ad4ec129654784a60d1a1427a643
             {% for task in taskList %}
             <tr>
                 <th scope=\"row\">{{ task.id }}</th>
-                <td>{{ task.name }}</td>
-                <td>{{ task.priority }}</td>
+                <td style=\"width: 380px;\">{{ task.name }}</td>
+{#                <td>{{ task.priority }}</td>#}
                 <td>{{ task.dueDate|date('F j, Y ,g:i a') }}</td>
                 <td>
                     <a href=\"/task/details/{{ task.id }}\" class=\"btn btn-success\" style=\"width: 87px;\">View</a>
