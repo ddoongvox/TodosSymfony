@@ -5,6 +5,7 @@
     <div style="min-height: 570px; margin: 30px 30px 0 30px;">
         <h2 class="page-header" style="margin-left: 10px;">{{ task.name }}</h2>
         <ul class="list-group">
+            <li class="list-group-item">Tag List: {{ tags.name }}</li>
             <li class="list-group-item">Priority: {{ task.priority }}</li>
             <li class="list-group-item">Due date: {{ task.dueDate|date('F j, Y ,g:i a') }}</li>
         </ul>

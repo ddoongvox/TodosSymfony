@@ -61,7 +61,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         // line 10
         echo "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 </head>
-<body style=\"background-color: #5eb5e0;\">
+<body style=\"background-image: radial-gradient( circle farthest-corner at -3.7% -5%,  rgba(113,213,225,1) 0.3%, rgba(73,146,226,1) 90.5% );\">
     <div class=\"container\" style=\"margin: 50px auto; width: 1100px; min-height: 670px; background-color: #ffffff; border-radius: 5px;\">
         <div class=\"row\">
             <div class=\"col-md-12\">
@@ -182,7 +182,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
     {% block stylesheets %}{% endblock %}
     <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 </head>
-<body style=\"background-color: #5eb5e0;\">
+<body style=\"background-image: radial-gradient( circle farthest-corner at -3.7% -5%,  rgba(113,213,225,1) 0.3%, rgba(73,146,226,1) 90.5% );\">
     <div class=\"container\" style=\"margin: 50px auto; width: 1100px; min-height: 670px; background-color: #ffffff; border-radius: 5px;\">
         <div class=\"row\">
             <div class=\"col-md-12\">

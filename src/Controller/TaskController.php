@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Tags;
 use App\Entity\Task;
 use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -114,10 +115,12 @@ class TaskController extends Controller {
                     'class' => 'form-control',
                     'style' => 'margin-bottom: 15px'
                 ]])
-            ->add('due_date', DateTimeType::class, [ 'attr' => [
-//                'class' => 'form-control',
-                'style' => 'margin-bottom: 15px; display: flex;'
-            ]])
+            ->add('due_date', DateTimeType::class, [
+                'attr' => [ 'style' => 'margin-bottom: 15px; display: flex;' ],
+                'placeholder' => [
+                    'year' => '2019', 'month' => 'Month', 'day' => 'Day',
+                    'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
+                ]])
             ->add('save', SubmitType::class, [
                 'label' => 'Update Task', 'attr' => [
                     'class' => 'btn btn-primary',
@@ -182,8 +185,13 @@ class TaskController extends Controller {
         $task = $this->getDoctrine()
             ->getRepository(Task::class)
             ->find($id);
+        $tags = $this->getDoctrine()
+            ->getRepository(Tags::class)
+            ->find($id);        // fail
+
         return $this->render("task/details.html.twig", [
-            'task' => $task
+            'task' => $task,
+            'tags' => $tags
         ]);
     }
 }

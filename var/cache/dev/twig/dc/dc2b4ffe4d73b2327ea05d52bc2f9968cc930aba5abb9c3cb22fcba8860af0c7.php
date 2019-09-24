@@ -72,13 +72,17 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 6, $this->source); })()), "name", [], "any", false, false, false, 6), "html", null, true);
         echo "</h2>
         <ul class=\"list-group\">
-            <li class=\"list-group-item\">Priority: ";
+            <li class=\"list-group-item\">Tag List: ";
         // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 8, $this->source); })()), "priority", [], "any", false, false, false, 8), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tags"]) || array_key_exists("tags", $context) ? $context["tags"] : (function () { throw new RuntimeError('Variable "tags" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
+        echo "</li>
+            <li class=\"list-group-item\">Priority: ";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 9, $this->source); })()), "priority", [], "any", false, false, false, 9), "html", null, true);
         echo "</li>
             <li class=\"list-group-item\">Due date: ";
-        // line 9
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 9, $this->source); })()), "dueDate", [], "any", false, false, false, 9), "F j, Y ,g:i a"), "html", null, true);
+        // line 10
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["task"]) || array_key_exists("task", $context) ? $context["task"] : (function () { throw new RuntimeError('Variable "task" does not exist.', 10, $this->source); })()), "dueDate", [], "any", false, false, false, 10), "F j, Y ,g:i a"), "html", null, true);
         echo "</li>
         </ul>
     </div>
@@ -106,7 +110,7 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
 
     public function getDebugInfo()
     {
-        return array (  81 => 9,  77 => 8,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  85 => 10,  81 => 9,  77 => 8,  72 => 6,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -118,6 +122,7 @@ class __TwigTemplate_cfb940271159d84e803c96f47cbc553c75b69bb790f5c39a0bc9b05d47d
     <div style=\"min-height: 570px; margin: 30px 30px 0 30px;\">
         <h2 class=\"page-header\" style=\"margin-left: 10px;\">{{ task.name }}</h2>
         <ul class=\"list-group\">
+            <li class=\"list-group-item\">Tag List: {{ tags.name }}</li>
             <li class=\"list-group-item\">Priority: {{ task.priority }}</li>
             <li class=\"list-group-item\">Due date: {{ task.dueDate|date('F j, Y ,g:i a') }}</li>
         </ul>
